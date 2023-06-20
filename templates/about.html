@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Mapping Spotify Genres</title>
+        <link rel="icon" type="image/x-icon" href="https://i.imgur.com/GJNBgQo.png">
+        <meta name="description" content="A python and flask web-app created using data from the Spotify Web-Api">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+        body.about {
+            background-image: url('https://i.imgur.com/WXZLxlK.png'),radial-gradient(circle at 100%, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+            background-attachment: fixed;
+            height: 200vh;
+            display: grid;
+            justify-content: center;
+            align-content: start;
+            grid-template-columns: minmax(400px, 800px);
+            font-family: font-family: 'Courier New', monospace;
+        }
+
+
+
+        h4 {margin:5px;
+            padding:5px;
+            color: black;
+        }
+
+        p {
+            padding-left: 20px;
+            padding-bottom: 0px;
+            padding-top: 0px;
+            color: whitesmoke;
+        }
+
+        a {
+            color: whitesmoke
+            }
+
+    </style>
+    </head>
+    <body class = "about">
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <h1> About Geo-ify </h1>
+        <h4> Basics </h4>
+            <p> <i> Geo-ify </i> is a Web-App that takes in a users Spotify data and outputs the cities that are most closely correlated with the users top artists's genres.</p>
+        <h4>A Note on City/Genre Correlation </h4>
+            <p> Geo-ify uses a database of City Genre correlations from the brilliant <i>Every Noise at Once Project</i>.
+                The specific collection is called <i>We Built This City On</i>. Find it <a href="https://everynoise.com/cities.html"><i>Here.</i></a> <br>
+
+                In the creators own words the site is a <i>"a distribution of the genres tracked by Spotify to the 322 cities that, according to our data, produced notable fractions of their definitive artists."</i>
+                While it is unclear how a genre's "definitive" artists are identified the logic behind the correlations is (I think) straightforward, for example a city that produces many popular <i> Experimental Jazz Panists</i> (unsure if this is real) would be highly correlated with the genre <i>experimental Jazz Piano</i>
+                and would find itself listed as a city with such a correlation. Then Geo-ify may find a musician in your top musicians who is an <i> Experimental Jazz Pianist</i> and would then say oh well <i> Experimental Jazz Piano</i> is from [a city].<br>
+                This can lead to some confusiom especially about artists who are famously from one city but perform a genre more strongly correlated with another city.
+            </p>
+        <h4> A note on Geo-ify Doing Its Best </h4>
+            <p> Geo-ify is a little Python Flask App written by a novice coder who likes maps and music and is only as good as its data and sometimes improvisational and messy code.
+                it's not gonna do the entire intersection of geography, music and culture justice. I apologize on it's behalf for any oversights and hope as the project of identifying genres continues
+                over at Every Noise a wider and wider view of music and its heritage continues to come into view.
+            </p>
+
+        <p>Background image composed from stockphotos <a href="http://www.freepik.com">Designed by GarryKillian / Freepik</a></p>
+
+
+
+        <script src="" async defer></script>
+    </body>
+</html>

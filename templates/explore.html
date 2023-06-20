@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Mapping Spotify Genres</title>
+        <link rel="icon" type="image/x-icon" href="https://i.imgur.com/GJNBgQo.png">
+        <meta name="description" content="Geo-IFY: A web-app created using data from the Spotify Web-Api and Every Noise">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            body.explore {
+              background-image: url('https://i.imgur.com/WXZLxlK.png'),radial-gradient(circle at 100%, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+              background-attachment: fixed;
+              height: 100vh;
+              display: grid;
+              justify-content: center;
+              align-content: start;
+              grid-template-columns: minmax(150px, 800px);
+              font-family: font-family: 'Courier New', monospace;
+            }
+
+            button {
+              background-color: #4CAF50; /* Green */
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 20px;
+              border-radius:5px;
+
+            }
+
+            button:hover {
+              box-shadow: 0px 0px 5px #fff;
+              transform: translateY(-2px);
+            }
+
+
+            h2 {padding-top 5px;
+
+            }
+
+            h3 {padding:0;
+                color: white;
+
+            }
+
+            p {padding-top: 0
+              padding-bottom: 5px;
+              font-size:18;
+            }
+
+            a {
+                color:whitesmoke;
+            }
+
+            img {
+                height:10vh;
+            </style>
+        </head>
+
+<body class = "explore">
+
+<h2>Your Top Artists and Their Corresponding Genres</h2>
+<h3> Click on a Genre to be redirected to the Every Noise page for the genre</h3>
+<p> Here you can find more artists who belong to the genre and listen to snippets of their songs.</p>
+    <div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Artist</th>
+              <th>Genres</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for key, value in artgendisplay.items() %}
+           <tr>
+               <td> <b>  <i> <a href = {{artist_links[key]}}> {{ key }} </a> </i> </b> </td>
+               {%for genre in value%}
+               <td> <a href = {{linkdict[genre]}} >{{genre}}</a></td>
+               {% endfor %}
+           </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+        </div>
+<p> Some of these genres do not show up on your city list, this may be because they do not have enough correlation to appear on the top 373 city list or did not appear for an opaque Every Noise reason.<br>  </p>
+<br>
+<br>
+  <form action="https://www.geo-ify.com/logout">
+    <button type="submit">Log Out</button>
+  </form>
+<br>
+<br>
+<img src="https://i.imgur.com/N864p74.png">
+<br>
+</body>
+</html>
